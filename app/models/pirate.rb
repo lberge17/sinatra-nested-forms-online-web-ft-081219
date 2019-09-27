@@ -9,6 +9,7 @@ class Pirate
       if k == "ship"
         v.each do |ship_atts|
           @ships << Ship.new(ship_atts)
+        end
       else
         self.send("#{k}=", v)
       end
