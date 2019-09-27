@@ -4,9 +4,11 @@ class Pirate
   @@all = []
   
   def initialize(attributes)
+    @ships = []
     attributes.each do |k, v| 
       if k == "ship"
-        @ship = Ship.new(v)
+        v.each do |ship_atts|
+          @ships << Ship.new(ship_atts)
       else
         self.send("#{k}=", v)
       end
